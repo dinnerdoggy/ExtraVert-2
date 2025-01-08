@@ -2,14 +2,14 @@
 
 public class Plant
 {
-    public string Species;
-    public int LightNeeds;
-    public decimal AskingPrice;
-    public string City;
-    public int Zip;
-    public bool Sold;
+   public string Species { get; set; }
+   public int LightNeeds { get; set; }
+   public decimal AskingPrice { get; set; }
+   public string City { get; set; }
+   public int Zip {  get; set; }
+   public bool Sold { get; set; }
 
-    public Plant(string species, int lightneeds, decimal askingprice, string city, int zip, bool sold)
+   public Plant(string species, int lightneeds, decimal askingprice, string city, int zip, bool sold)
     {
         Species = species;
         LightNeeds = lightneeds;
