@@ -1,4 +1,6 @@
 ﻿using ExtraVert;
+using PostPlant;
+
 
 Plant plant1 = new Plant("Thyme", 5, 5.00m, "Nashville", 37214, false);
 Plant plant2 = new Plant("Basil", 5, 5.00m, "Clarksville", 37130, true);
@@ -76,19 +78,39 @@ while (!exit)
     }
 }
 
-    void PerformOptionA()
+void PerformOptionA()
 {
+    int count = 0;
     foreach (var plant in plants)
     {
-        string i = plant.Sold ? $"{plant.Species} in {plant.City} has sold for {plant.AskingPrice}" : $"{plant.Species} in {plant.City} is available for {plant.AskingPrice}";
-        Console.WriteLine(i);
+        string i = plant.Sold
+            ? 
+            $"{plant.Species} in {plant.City} has sold for {plant.AskingPrice}"
+            :
+            $"{plant.Species} in {plant.City} is available for {plant.AskingPrice}";
+        Console.WriteLine($"{++count}. {i}");
     }
 }
 
-static void PerformOptionB()
+void PerformOptionB()
 {
-    Console.WriteLine("Chose Post a plant to be adopted.");
-    // Add logic for Option b
+    Console.WriteLine("Please enter the species name:");
+    string species = Console.ReadLine();
+
+    Console.Write("Enter light needs 1-5:");
+    var LightNeeds = int.Parse(Console.ReadLine());
+
+    Console.WriteLine("Enter asking price:");
+    var AskingPrice = decimal.Parse(Console.ReadLine());
+
+    Console.WriteLine("Enter City: ");
+    var City = Console.ReadLine();
+
+    Console.WriteLine("Enter zip code: ");
+    var Zip = int.Parse(Console.ReadLine());
+
+    var newPlant = new Plant(species, LightNeeds, AskingPrice, City, Zip, false);
+    plants.Add(newPlant);
 }
 
 static void PerformOptionC()
