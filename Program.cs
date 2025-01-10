@@ -13,15 +13,20 @@ bool exit = false;
 while (!exit)
 {
     // Display the menu
-    Console.Clear();
-    Console.WriteLine("========== Main Menu ==========");
-    Console.WriteLine("a. Display all plants");
-    Console.WriteLine("b. Post a plant to be adopted");
-    Console.WriteLine("c. Adopt a plant");
-    Console.WriteLine("d. Delist a plant");
-    Console.WriteLine("e. Exit the application");
-    Console.WriteLine("===============================");
-    Console.Write("Enter your choice (a-b): ");
+    static void DisplayMenu()
+    {
+        Console.Clear();
+        Console.WriteLine("========== Main Menu ==========");
+        Console.WriteLine("a. Display all plants");
+        Console.WriteLine("b. Post a plant to be adopted");
+        Console.WriteLine("c. Adopt a plant");
+        Console.WriteLine("d. Delist a plant");
+        Console.WriteLine("e. Exit the application");
+        Console.WriteLine("===============================");
+        Console.Write("Enter your choice (a-b): ");
+    }
+
+    DisplayMenu();
 
     // Read user input
     string choice = Console.ReadLine();
@@ -30,29 +35,35 @@ while (!exit)
     switch (choice)
     {
         case "a":
-            throw new NotImplementedException("Display all plants");
-            //Console.WriteLine("Chose Display all plants.");
-            //PerformOptionA();
+            Console.Clear();
+            PerformOptionA();
             break;
 
         case "b":
+            Console.Clear();
             PerformOptionB();
             break;
 
         case "c":
+            Console.Clear();
             PerformOptionC();
             break;
 
         case "d":
+            Console.Clear();
             PerformOptionD();
             break;
 
         case "e":
+            Console.Clear();
             Console.WriteLine("So long my friend ♥");
+            Console.ReadLine();
+            Console.Clear();
             exit = true;
             break;
 
         default:
+            Console.Clear();
             Console.WriteLine("Invalid choice. Please try again.");
             break;
     }
@@ -65,10 +76,13 @@ while (!exit)
     }
 }
 
-    static void PerformOptionA()
+    void PerformOptionA()
 {
-    Console.WriteLine("Performing action for Option a...");
-    // Add logic for Option a
+    foreach (var plant in plants)
+    {
+        string i = plant.Sold ? $"{plant.Species} in {plant.City} has sold for {plant.AskingPrice}" : $"{plant.Species} in {plant.City} is available for {plant.AskingPrice}";
+        Console.WriteLine(i);
+    }
 }
 
 static void PerformOptionB()
