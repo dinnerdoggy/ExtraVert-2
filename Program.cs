@@ -80,16 +80,7 @@ while (!exit)
 
 void PerformOptionA()
 {
-    int count = 0;
-    foreach (var plant in plants)
-    {
-        string i = plant.Sold
-            ? 
-            $"{plant.Species} in {plant.City} has sold for {plant.AskingPrice}"
-            :
-            $"{plant.Species} in {plant.City} is available for {plant.AskingPrice}";
-        Console.WriteLine($"{++count}. {i}");
-    }
+    Options.ListPlants(plants);
 }
 
 void PerformOptionB()
@@ -97,10 +88,9 @@ void PerformOptionB()
     Options.PostPlant(plants);
 }
 
-static void PerformOptionC()
+void PerformOptionC()
 {
-    Console.WriteLine("Chose Adopt a plant.");
-    // Add logic for Option c
+    Options.AdoptPlant(plants);
 }
 
 static void PerformOptionD()
@@ -108,12 +98,3 @@ static void PerformOptionD()
     Console.WriteLine("Chose Delist a plant.");
     // Add logic for Option d
 }
-
-// Console.WriteLine("\n\nWhat is up my boofus?\n\n\tI got some plants for yo bitch ass...\n");
-
-//foreach (var plant in plants)
-//{
-//    Console.WriteLine($"\t\t{plant.Species}, {plant.AskingPrice}\n");
-//}
-
-//Console.WriteLine("\n");
