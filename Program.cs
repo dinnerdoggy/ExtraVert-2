@@ -93,8 +93,14 @@ void PerformOptionC()
     Options.AdoptPlant(plants);
 }
 
-static void PerformOptionD()
+void PerformOptionD()
 {
-    Console.WriteLine("Chose Delist a plant.");
-    // Add logic for Option d
+    Options.ListPlants(plants);
+    Console.WriteLine("\nEnter the number of the plant you would like to delist:");
+    var choice = int.Parse(Console.ReadLine()) - 1;
+    var name = plants[choice].Species;
+    plants.RemoveAt(choice);
+    Console.Clear();
+    Options.ListPlants(plants);
+    Console.WriteLine($"\n{name} has been delisted!");
 }
