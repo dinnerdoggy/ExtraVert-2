@@ -23,9 +23,10 @@ while (!exit)
         Console.WriteLine("b. Post a plant to be adopted");
         Console.WriteLine("c. Adopt a plant");
         Console.WriteLine("d. Delist a plant");
-        Console.WriteLine("e. Exit the application");
+        Console.WriteLine("e. Plant of the Day");
+        Console.WriteLine("f. Exit the application");
         Console.WriteLine("===============================");
-        Console.Write("Enter your choice (a-b): ");
+        Console.Write("Enter your choice (a-f): ");
     }
 
     DisplayMenu();
@@ -57,6 +58,11 @@ while (!exit)
             break;
 
         case "e":
+            Console.Clear();
+            PerformOptionE();
+            break;
+
+        case "f":
             Console.Clear();
             Console.WriteLine("So long my friend ♥");
             Console.ReadLine();
@@ -96,4 +102,9 @@ void PerformOptionC()
 void PerformOptionD()
 {
     Options.DelistPlant(plants);
+}
+
+void PerformOptionE()
+{
+    Options.PlantOfTheDay(plants);
 }
