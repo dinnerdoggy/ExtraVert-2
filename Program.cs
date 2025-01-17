@@ -2,11 +2,11 @@
 using PostPlant;
 
 
-Plant plant1 = new Plant("Thyme", 1, 5.00m, "Nashville", 37214, false);
-Plant plant2 = new Plant("Basil", 2, 5.00m, "Clarksville", 37130, true);
-Plant plant3 = new Plant("Marjeewanna", 3, 15.00m, "Classified Location", 55555, true);
-Plant plant4 = new Plant("Tomato", 4, 3.00m, "Walmart", 37042, false);
-Plant plant5 = new Plant("Habenero", 5, 1.00m, "Murfreesboro", 37130, true);
+Plant plant1 = new Plant("Thyme", 1, 5.00m, "Nashville", 37214, false, DateTime.MaxValue);
+Plant plant2 = new Plant("Basil", 2, 5.00m, "Clarksville", 37130, true, DateTime.MaxValue);
+Plant plant3 = new Plant("Marjeewanna", 3, 15.00m, "Classified Location", 55555, true, DateTime.MaxValue);
+Plant plant4 = new Plant("Tomato", 4, 3.00m, "Walmart", 37042, false, DateTime.MaxValue);
+Plant plant5 = new Plant("Habenero", 5, 1.00m, "Murfreesboro", 37130, true, DateTime.MaxValue);
 
 var plants = new List<Plant> { plant1, plant2, plant3, plant4, plant5 };
 
