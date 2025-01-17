@@ -2,9 +2,9 @@
 using PostPlant;
 
 
-Plant plant1 = new Plant("Thyme", 5, 5.00m, "Nashville", 37214, false);
-Plant plant2 = new Plant("Basil", 5, 5.00m, "Clarksville", 37130, true);
-Plant plant3 = new Plant("Marjeewanna", 5, 15.00m, "Classified Location", 55555, true);
+Plant plant1 = new Plant("Thyme", 1, 5.00m, "Nashville", 37214, false);
+Plant plant2 = new Plant("Basil", 2, 5.00m, "Clarksville", 37130, true);
+Plant plant3 = new Plant("Marjeewanna", 3, 15.00m, "Classified Location", 55555, true);
 Plant plant4 = new Plant("Tomato", 4, 3.00m, "Walmart", 37042, false);
 Plant plant5 = new Plant("Habenero", 5, 1.00m, "Murfreesboro", 37130, true);
 
@@ -24,7 +24,8 @@ while (!exit)
         Console.WriteLine("c. Adopt a plant");
         Console.WriteLine("d. Delist a plant");
         Console.WriteLine("e. Plant of the Day");
-        Console.WriteLine("f. Exit the application");
+        Console.WriteLine("f. Search by Light Needs");
+        Console.WriteLine("g. Exit the application");
         Console.WriteLine("===============================");
         Console.Write("Enter your choice (a-f): ");
     }
@@ -63,6 +64,11 @@ while (!exit)
             break;
 
         case "f":
+            Console.Clear();
+            PerformOptionF();
+            break;
+
+        case "g":
             Console.Clear();
             Console.WriteLine("So long my friend ♥");
             Console.ReadLine();
@@ -107,4 +113,9 @@ void PerformOptionD()
 void PerformOptionE()
 {
     Options.PlantOfTheDay(plants);
+}
+
+void PerformOptionF()
+{
+    Options.SearchByLightNeeds(plants);
 }
