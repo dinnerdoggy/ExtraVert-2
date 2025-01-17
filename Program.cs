@@ -5,8 +5,8 @@ using PostPlant;
 Plant plant1 = new Plant("Thyme", 1, 5.00m, "Nashville", 37214, false, DateTime.MaxValue);
 Plant plant2 = new Plant("Basil", 2, 0.05m, "Clarksville", 37130, true, DateTime.MaxValue);
 Plant plant3 = new Plant("Marjeewanna", 3, 15.00m, "Classified Location", 55555, false, DateTime.MinValue);
-Plant plant4 = new Plant("Tomato", 4, 3.00m, "Walmart", 37042, false, DateTime.MaxValue);
-Plant plant5 = new Plant("Habenero", 5, 3.00m, "Murfreesboro", 37130, false, DateTime.MaxValue);
+Plant plant4 = new Plant("Tomato", 5, 3.00m, "Walmart", 37042, false, DateTime.MaxValue);
+Plant plant5 = new Plant("Habenero", 4, 3.00m, "Murfreesboro", 37130, false, DateTime.MaxValue);
 
 var plants = new List<Plant> { plant1, plant2, plant3, plant4, plant5 };
 
